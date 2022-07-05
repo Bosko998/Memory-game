@@ -82,6 +82,7 @@ let LeaderBoard = () =>{
   for(let i = 0 ; i < dugmici.length ; i++)
   dugmici[i].addEventListener("click",()=>{
       if(dugmici[i].value === "1"){
+        lakoLeaderBoard = JSON.parse(localStorage.getItem("lako"));
         tabela.innerHTML = `<table>
                             <tr><td >Mesto</td><td>Korisnicko ime</td>
                             <td>Vreme</td>
@@ -103,6 +104,7 @@ let LeaderBoard = () =>{
         return tabela;
        })
       }else if(dugmici[i].value === "2"){
+        srednjeLeaderBoard = JSON.parse(localStorage.getItem("srednje"));
         tabela.innerHTML = `<table>
                             <tr><td >Mesto</td><td>Korisnicko ime</td>
                             <td>Vreme</td>
@@ -126,7 +128,7 @@ let LeaderBoard = () =>{
          })
        
       }else if(dugmici[i].value === "3"){
-        console.log
+        teskoLeaderBoard = JSON.parse(localStorage.getItem("tesko"));
         tabela.innerHTML = `<table>
                             <tr><td >Mesto</td><td>Korisnicko ime</td>
                             <td>Vreme</td>
@@ -149,6 +151,7 @@ let LeaderBoard = () =>{
          })
 
       }else if(dugmici[i].value === "4"){
+        ekspertLeaderBoard = JSON.parse(localStorage.getItem("ekspert"));
         tabela.innerHTML = `<table>
                             <tr><td >Mesto</td><td>Korisnicko ime</td>
                             <td>Vreme</td>
