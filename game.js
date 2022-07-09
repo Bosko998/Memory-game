@@ -11,12 +11,13 @@ let srednjeLeaderBoard = JSON.parse(localStorage.getItem("srednje"));
 let teskoLeaderBoard = JSON.parse(localStorage.getItem("tesko"));
 let ekspertLeaderBoard = JSON.parse(localStorage.getItem("ekspert"));
 let mediaQuery  = window.matchMedia("(max-width: 700px)")
+let nav = document.querySelector("#nav");
+let table_results  = document.querySelector("#table_results");
 let igrac;
 let vremeIgr;
 let dialogBox;
 let interval;
 let user;
-
 
 let intervals = ()=>{
 let brojac = 0;
@@ -71,20 +72,42 @@ let cardGenerator = ()=>{
             if(radios.value === "16"){
                 card_game.style.gridTemplateColumns ="repeat(4,8rem)"
                 card_game.style.gridTemplateRows ="repeat(4,8rem)"
-                
-                
+
+                if(mediaQuery.matches){
+                    card_game.style.gridTemplateColumns ="repeat(3,6.3rem)"
+                    card_game.style.gridTemplateRows ="repeat(6,6.3rem)"
+                    table_results.style.marginLeft = "-10px";
+                    card_game.style.backgroundPosition = "top";
+                }
+ 
             }else if(radios.value === "36"){
                 card_game.style.gridTemplateColumns ="repeat(6,6rem)"
                 card_game.style.gridTemplateRows ="repeat(6,6rem)"
-        
+                if(mediaQuery.matches){ 
+                    card_game.style.gridTemplateColumns ="repeat(3,6.3rem)"
+                    card_game.style.gridTemplateRows ="repeat(12,6.3rem)"
+                    card_game.style.backgroundPosition = "top";
+                
+                }
 
             }else if(radios.value === "64"){
                 card_game.style.gridTemplateColumns ="repeat(8,4rem)"
                 card_game.style.gridTemplateRows ="repeat(8,4rem)"
-            }else if(radios.value === "100"){
+                if(mediaQuery.matches){ 
+                    card_game.style.gridTemplateColumns ="repeat(3,6.3rem)"
+                    card_game.style.gridTemplateRows ="repeat(22,6.3rem)"
+                    card_game.style.backgroundPosition = "top";
                 
+                }
+            }else if(radios.value === "100"){
                 card_game.style.gridTemplateColumns ="repeat(10,3rem)"
                 card_game.style.gridTemplateRows ="repeat(10,3rem)"
+                if(mediaQuery.matches){ 
+                    card_game.style.gridTemplateColumns ="repeat(3,6.3rem)"
+                    card_game.style.gridTemplateRows ="repeat(34,6.3rem)"
+                    card_game.style.backgroundPosition = "top";
+                
+                }
             }
         })
        
@@ -253,14 +276,6 @@ let reset = (text)=>{
 
     
 }
-// let mediaQueryFunction = () => {
-//     mediaQuery.addEventListener("onload",()=>{
-//         if(mediaQuery){
-//             console.log(mediaQuery)
-//         }
-//     })
-   
 
-// }
 
 export{cardGenerator}

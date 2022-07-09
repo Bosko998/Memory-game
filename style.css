@@ -26,14 +26,18 @@ section{
   
     #card-game-section{
         grid-template-columns:repeat(3,6.3rem);
+        grid-template-rows:repeat(6,6.3rem);
         background-size:auto !important;
-        
+        background-position: top !important;
 
     }
     #table_results > table{
         width: 20em; 
         margin-left: 30px;
         
+    }
+    #table_results{
+        margin-left: -5px;
     }
     #table_header {
         margin-left: 30px;
