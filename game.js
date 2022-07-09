@@ -11,7 +11,6 @@ let srednjeLeaderBoard = JSON.parse(localStorage.getItem("srednje"));
 let teskoLeaderBoard = JSON.parse(localStorage.getItem("tesko"));
 let ekspertLeaderBoard = JSON.parse(localStorage.getItem("ekspert"));
 let mediaQuery  = window.matchMedia("(max-width: 700px)")
-let nav = document.querySelector("#nav");
 let table_results  = document.querySelector("#table_results");
 let igrac;
 let vremeIgr;
